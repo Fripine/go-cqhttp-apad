@@ -67,7 +67,6 @@ func Parse() {
 	flag.BoolVar(&FastStart, "faststart", false, "skip waiting 5 seconds")
 	flag.BoolVar(&UpdateProtocol, "update-protocol", false, "update protocol")
 	flag.Parse()
-	FastStart = true
 	if *d {
 		Debug = true
 	}
