@@ -12,12 +12,12 @@ import (
 	"sync"
 	"time"
 
+	"github.com/Fripine/MiraiGo-apad/binary"
+	"github.com/Fripine/MiraiGo-apad/client"
+	"github.com/Fripine/MiraiGo-apad/wrapper"
 	para "github.com/fumiama/go-hide-param"
 	rotatelogs "github.com/lestrrat-go/file-rotatelogs"
 	"github.com/pkg/errors"
-	"github.com/sealdice/MiraiGo/binary"
-	"github.com/sealdice/MiraiGo/client"
-	"github.com/sealdice/MiraiGo/wrapper"
 	log "github.com/sirupsen/logrus"
 	"github.com/tidwall/gjson"
 	"golang.org/x/crypto/pbkdf2"
@@ -481,8 +481,8 @@ func newClient() *client.QQClient {
 }
 
 var remoteVersions = map[int]string{
-	1: "https://raw.githubusercontent.com/sealdice/protocol-versions/master/android_phone.json",
-	6: "https://raw.githubusercontent.com/sealdice/protocol-versions/master/android_pad.json",
+	1: "https://raw.githubusercontent.com/Fripine/protocol-versions/master/android_phone.json",
+	6: "https://raw.githubusercontent.com/Fripine/protocol-versions/master/android_pad.json",
 }
 
 func getRemoteLatestProtocolVersion(protocolType int) ([]byte, error) {

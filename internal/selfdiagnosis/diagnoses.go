@@ -2,7 +2,7 @@
 package selfdiagnosis
 
 import (
-	"github.com/sealdice/MiraiGo/client"
+	"github.com/Fripine/MiraiGo-apad/client"
 	log "github.com/sirupsen/logrus"
 )
 

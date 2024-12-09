@@ -16,7 +16,7 @@ import (
 	log "github.com/sirupsen/logrus"
 	"github.com/tidwall/gjson"
 
-	"github.com/sealdice/MiraiGo/utils"
+	"github.com/Fripine/MiraiGo-apad/utils"
 
 	"github.com/Fripine/go-cqhttp-apad/global"
 	"github.com/Fripine/go-cqhttp-apad/internal/base"

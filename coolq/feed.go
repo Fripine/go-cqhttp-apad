@@ -1,7 +1,7 @@
 package coolq
 
 import (
-	"github.com/sealdice/MiraiGo/topic"
+	"github.com/Fripine/MiraiGo-apad/topic"
 
 	"github.com/Fripine/go-cqhttp-apad/global"
 )

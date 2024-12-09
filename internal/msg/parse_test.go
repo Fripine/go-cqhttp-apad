@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/sealdice/MiraiGo/utils"
+	"github.com/Fripine/MiraiGo-apad/utils"
 	"github.com/stretchr/testify/assert"
 	"github.com/tidwall/gjson"
 )

@@ -10,10 +10,10 @@ import (
 	"strings"
 	"time"
 
+	"github.com/Fripine/MiraiGo-apad/client"
+	"github.com/Fripine/MiraiGo-apad/utils"
 	"github.com/mattn/go-colorable"
 	"github.com/pkg/errors"
-	"github.com/sealdice/MiraiGo/client"
-	"github.com/sealdice/MiraiGo/utils"
 	log "github.com/sirupsen/logrus"
 	"gopkg.ilharper.com/x/isatty"
 

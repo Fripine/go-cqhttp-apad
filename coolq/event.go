@@ -8,9 +8,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/sealdice/MiraiGo/binary"
-	"github.com/sealdice/MiraiGo/client"
-	"github.com/sealdice/MiraiGo/message"
+	"github.com/Fripine/MiraiGo-apad/binary"
+	"github.com/Fripine/MiraiGo-apad/client"
+	"github.com/Fripine/MiraiGo-apad/message"
 	log "github.com/sirupsen/logrus"
 
 	"github.com/Fripine/go-cqhttp-apad/db"

@@ -6,7 +6,7 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"github.com/sealdice/MiraiGo/binary"
+	"github.com/Fripine/MiraiGo-apad/binary"
 )
 
 // @@@ CQ码转义处理 @@@

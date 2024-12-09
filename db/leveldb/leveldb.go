@@ -3,9 +3,9 @@ package leveldb
 import (
 	"path"
 
+	"github.com/Fripine/MiraiGo-apad/binary"
+	"github.com/Fripine/MiraiGo-apad/utils"
 	"github.com/pkg/errors"
-	"github.com/sealdice/MiraiGo/binary"
-	"github.com/sealdice/MiraiGo/utils"
 	"github.com/syndtr/goleveldb/leveldb"
 	"github.com/syndtr/goleveldb/leveldb/opt"
 	"gopkg.in/yaml.v3"

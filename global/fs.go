@@ -12,8 +12,8 @@ import (
 	"runtime"
 	"strings"
 
+	"github.com/Fripine/MiraiGo-apad/utils"
 	b14 "github.com/fumiama/go-base16384"
-	"github.com/sealdice/MiraiGo/utils"
 	"github.com/segmentio/asm/base64"
 	log "github.com/sirupsen/logrus"
 

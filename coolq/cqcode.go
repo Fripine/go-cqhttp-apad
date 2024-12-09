@@ -16,10 +16,10 @@ import (
 	"strings"
 	"time"
 
+	"github.com/Fripine/MiraiGo-apad/binary"
+	"github.com/Fripine/MiraiGo-apad/message"
+	"github.com/Fripine/MiraiGo-apad/utils"
 	b14 "github.com/fumiama/go-base16384"
-	"github.com/sealdice/MiraiGo/binary"
-	"github.com/sealdice/MiraiGo/message"
-	"github.com/sealdice/MiraiGo/utils"
 	"github.com/segmentio/asm/base64"
 	log "github.com/sirupsen/logrus"
 	"github.com/tidwall/gjson"

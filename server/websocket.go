@@ -14,8 +14,8 @@ import (
 	"sync"
 	"time"
 
+	"github.com/Fripine/MiraiGo-apad/utils"
 	"github.com/RomiChan/websocket"
-	"github.com/sealdice/MiraiGo/utils"
 	log "github.com/sirupsen/logrus"
 	"github.com/tidwall/gjson"
 	"gopkg.in/yaml.v3"

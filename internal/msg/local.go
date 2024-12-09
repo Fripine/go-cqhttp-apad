@@ -3,7 +3,7 @@ package msg
 import (
 	"io"
 
-	"github.com/sealdice/MiraiGo/message"
+	"github.com/Fripine/MiraiGo-apad/message"
 )
 
 // Poke 拍一拍

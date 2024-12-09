@@ -2,6 +2,8 @@ github.com/FloatTech/sqlite v1.6.3 h1:MQkqBNlkPuCoKQQgoNLuTL/2Ci3tBTFAnVYBdD0Wy4
 github.com/FloatTech/sqlite v1.6.3/go.mod h1:zFbHzRfB+CJ+VidfjuVbrcin3DAz283F7hF1hIeHzpY=
 github.com/FloatTech/ttl v0.0.0-20220715042055-15612be72f5b h1:tvciXWq2nuvTbFeJGLDNIdRX3BI546D3O7k7vrVueZw=
 github.com/FloatTech/ttl v0.0.0-20220715042055-15612be72f5b/go.mod h1:fHZFWGquNXuHttu9dUYoKuNbm3dzLETnIOnm1muSfDs=
+github.com/Fripine/MiraiGo-apad v0.0.0-20241209021055-4d55ff54448b h1:DgzTD6x3pNe4TVmz/iWKRkbE8oVZ7SN9RszYchrGJDQ=
+github.com/Fripine/MiraiGo-apad v0.0.0-20241209021055-4d55ff54448b/go.mod h1:EBqxrzETQ0I4LLUX9/WsPGBzcbaVdDKBtzdn0js4Kcw=
 github.com/LagrangeDev/LagrangeGo v0.1.0 h1:3f/PvhKF7eOilticUmy8FLmtkjjtymAuFY91xavhIs8=
 github.com/LagrangeDev/LagrangeGo v0.1.0/go.mod h1:qK/l75YuMYdJWfPcxPhfjybJdXD4kzMFvcbKlvdAoa0=
 github.com/Microsoft/go-winio v0.6.2-0.20230724192519-b29bbd58a65a h1:aU1703IHxupjzipvhu16qYKLMR03e+8WuNR+JMsKfGU=
@@ -80,8 +82,6 @@ github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec h1:W09IVJc94
 github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec/go.mod h1:qqbHyh8v60DhA7CoWK5oRCqLrMHRGoxYCSS9EjAz6Eo=
 github.com/rogpeppe/go-internal v1.9.0 h1:73kH8U+JUqXU8lRuOHeVHaa/SZPifC7BkcraZVejAe8=
 github.com/rogpeppe/go-internal v1.9.0/go.mod h1:WtVeX8xhTBvf0smdhujwtBcq4Qrzq/fJaraNFVN+nFs=
-github.com/sealdice/MiraiGo v0.0.0-20241018112010-a48f6dd61bf4 h1:3TrD+7ae5PZ1fENp+t9eGimR6nJD1JXhfnEaaOO51uM=
-github.com/sealdice/MiraiGo v0.0.0-20241018112010-a48f6dd61bf4/go.mod h1:qrHE4qD1sSp0i8UkqT/VhhrFTjYlQwNlCSkhfx3yCyc=
 github.com/segmentio/asm v1.2.0 h1:9BQrFxC+YOHJlTlHGkTrFWf59nbL3XnCoFLTwDCI7ys=
 github.com/segmentio/asm v1.2.0/go.mod h1:BqMnlJP91P8d+4ibuonYZw9mfnzI9HfxselHZr5aAcs=
 github.com/sirupsen/logrus v1.9.3 h1:dueUQJ1C2q9oE3F7wvmSGAaVtTmUizReu6fjN8uqzbQ=

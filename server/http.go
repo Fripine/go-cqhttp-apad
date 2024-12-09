@@ -19,7 +19,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/sealdice/MiraiGo/utils"
+	"github.com/Fripine/MiraiGo-apad/utils"
 	log "github.com/sirupsen/logrus"
 	"github.com/tidwall/gjson"
 	"gopkg.in/yaml.v3"

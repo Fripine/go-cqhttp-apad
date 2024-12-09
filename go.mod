@@ -4,6 +4,7 @@ go 1.20
 
 require (
 	github.com/FloatTech/sqlite v1.6.3
+	github.com/Fripine/MiraiGo-apad v0.0.0-20241209021055-4d55ff54448b
 	github.com/Microsoft/go-winio v0.6.2-0.20230724192519-b29bbd58a65a
 	github.com/RomiChan/syncx v0.0.0-20240418144900-b7402ffdebc7
 	github.com/RomiChan/websocket v1.4.3-0.20220227141055-9b2c6168c9c5
@@ -12,7 +13,6 @@ require (
 	github.com/lestrrat-go/file-rotatelogs v2.4.0+incompatible
 	github.com/mattn/go-colorable v0.1.13
 	github.com/pkg/errors v0.9.1
-	github.com/sealdice/MiraiGo v0.0.0-20241018112010-a48f6dd61bf4
 	github.com/segmentio/asm v1.2.0
 	github.com/sirupsen/logrus v1.9.3
 	github.com/stretchr/testify v1.8.1

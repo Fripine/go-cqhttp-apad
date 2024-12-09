@@ -14,8 +14,8 @@ import (
 	log "github.com/sirupsen/logrus"
 	"gopkg.in/yaml.v3"
 
-	"github.com/sealdice/MiraiGo/binary"
-	"github.com/sealdice/MiraiGo/utils"
+	"github.com/Fripine/MiraiGo-apad/binary"
+	"github.com/Fripine/MiraiGo-apad/utils"
 
 	"github.com/Fripine/go-cqhttp-apad/db"
 )
