@@ -139,10 +139,10 @@ func LoginInteract() {
 
 	if (base.Account.Uin == 0 || (base.Account.Password == "" && !base.Account.Encrypt)) && !global.PathExists("session.token") {
 		log.Warn("账号密码未配置, 将使用二维码登录.")
-		if !base.FastStart {
-			log.Warn("将在 5秒 后继续.")
-			time.Sleep(time.Second * 5)
-		}
+		// if !base.FastStart {
+		// 	log.Warn("将在 5秒 后继续.")
+		// 	time.Sleep(time.Second * 5)
+		// }
 	}
 
 	log.Info("当前版本:", base.Version)
