@@ -160,8 +160,8 @@ func requestSignServer(method string, url string, headers map[string]string, bod
 }
 
 func energy(uin uint64, id string, _ string, salt []byte) ([]byte, error) {
-	url := "custom_energy" + fmt.Sprintf("?data=%v&salt=%v&uin=%v&android_id=%v&guid=%v",
-		id, hex.EncodeToString(salt), uin, utils.B2S(device.AndroidId), hex.EncodeToString(device.Guid))
+	url := "custom_energy" + fmt.Sprintf("?data=%v&salt=%v&uin=%v&android_id=%v&guid=%v&q36=%v",
+		id, hex.EncodeToString(salt), uin, utils.B2S(device.AndroidId), hex.EncodeToString(device.Guid), device.QImei36)
 	if base.IsBelow110 {
 		url = "custom_energy" + fmt.Sprintf("?data=%v&salt=%v", id, hex.EncodeToString(salt))
 	}
