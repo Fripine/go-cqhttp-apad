@@ -235,8 +235,8 @@ func signRequset(seq uint64, uin string, cmd string, qua string, buff []byte) (s
 		http.MethodPost,
 		"sign",
 		headers,
-		bytes.NewReader([]byte(fmt.Sprintf("uin=%v&qua=%s&cmd=%s&seq=%v&buffer=%v&android_id=%v&guid=%v",
-			uin, qua, cmd, seq, hex.EncodeToString(buff), utils.B2S(device.AndroidId), hex.EncodeToString(device.Guid)))),
+		bytes.NewReader([]byte(fmt.Sprintf("uin=%v&qua=%s&cmd=%s&seq=%v&buffer=%v&android_id=%v&guid=%v&q36=%v",
+			uin, qua, cmd, seq, hex.EncodeToString(buff), utils.B2S(device.AndroidId), hex.EncodeToString(device.Guid), device.QImei36))),
 	)
 	if err != nil {
 		return nil, nil, nil, err
