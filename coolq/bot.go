@@ -324,8 +324,12 @@ func (bot *CQBot) SendPrivateMessage(target int64, groupID int64, m *message.Sen
 			bot.Client.SendFriendPoke(i.Target)
 			return 0
 		case *message.MusicShareElement:
-			bot.Client.SendFriendMusicShare(target, i)
-			return 0
+			ret, err := bot.Client.SendFriendMusicShare(target, i)
+			if err != nil {
+				log.Warnf("警告: 好友 %v 富文本消息发送失败: %v", target, err)
+				return -1
+			}
+			return bot.InsertPrivateMessage(ret, source)
 		}
 		newElem = append(newElem, e)
 	}
