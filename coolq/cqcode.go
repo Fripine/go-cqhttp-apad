@@ -713,7 +713,7 @@ func (bot *CQBot) ConvertElement(spec *onebot.Spec, elem msg.Element, sourceType
 				content = elem.Get("content")
 			}
 			return &message.MusicShareElement{
-				MusicType:  message.QQMusic,
+				MusicType:  "qq",
 				Title:      info.Get("track_info.name").Str,
 				Summary:    content,
 				Url:        jumpURL,
@@ -733,7 +733,7 @@ func (bot *CQBot) ConvertElement(spec *onebot.Spec, elem msg.Element, sourceType
 				artistName = info.Get("artists.0.name").String()
 			}
 			return &message.MusicShareElement{
-				MusicType:  message.CloudMusic,
+				MusicType:  "163",
 				Title:      info.Get("name").String(),
 				Summary:    artistName,
 				Url:        "https://music.163.com/song/?id=" + id,
@@ -742,19 +742,7 @@ func (bot *CQBot) ConvertElement(spec *onebot.Spec, elem msg.Element, sourceType
 			}, nil
 		case "custom":
 			if elem.Get("subtype") != "" {
-				var subType int
-				switch elem.Get("subtype") {
-				default:
-					subType = message.QQMusic
-				case "163":
-					subType = message.CloudMusic
-				case "migu":
-					subType = message.MiguMusic
-				case "kugou":
-					subType = message.KugouMusic
-				case "kuwo":
-					subType = message.KuwoMusic
-				}
+				subType := elem.Get("subtype")
 				return &message.MusicShareElement{
 					MusicType:  subType,
 					Title:      elem.Get("title"),
