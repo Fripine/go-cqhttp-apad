@@ -160,11 +160,12 @@ func requestSignServer(method string, url string, headers map[string]string, bod
 }
 
 func energy(uin uint64, id string, _ string, salt []byte) ([]byte, error) {
-	url := "custom_energy" + fmt.Sprintf("?data=%v&salt=%v&uin=%v&android_id=%v&guid=%v&q36=%v",
-		id, hex.EncodeToString(salt), uin, utils.B2S(device.AndroidId), hex.EncodeToString(device.Guid), device.QImei36)
-	if base.IsBelow110 {
-		url = "custom_energy" + fmt.Sprintf("?data=%v&salt=%v", id, hex.EncodeToString(salt))
-	}
+	// url := "custom_energy" + fmt.Sprintf("?data=%v&salt=%v&uin=%v&android_id=%v&guid=%v&q36=%v",
+	// 	id, hex.EncodeToString(salt), uin, utils.B2S(device.AndroidId), hex.EncodeToString(device.Guid), device.QImei36)
+	// if base.IsBelow110 {
+	// 	url = "custom_energy" + fmt.Sprintf("?data=%v&salt=%v", id, hex.EncodeToString(salt))
+	// }
+	url := "custom_energy" + fmt.Sprintf("?data=%v&salt=%v&uin=%v", id, hex.EncodeToString(salt), uin)
 	signServer, response, err := requestSignServer(http.MethodGet, url, nil, nil)
 	if err != nil {
 		log.Warnf("获取T544 sign时出现错误: %v. server: %v", err, signServer)
@@ -235,8 +236,9 @@ func signRequset(seq uint64, uin string, cmd string, qua string, buff []byte) (s
 		http.MethodPost,
 		"sign",
 		headers,
-		bytes.NewReader([]byte(fmt.Sprintf("uin=%v&qua=%s&cmd=%s&seq=%v&buffer=%v&android_id=%v&guid=%v&q36=%v",
-			uin, qua, cmd, seq, hex.EncodeToString(buff), utils.B2S(device.AndroidId), hex.EncodeToString(device.Guid), device.QImei36))),
+		// bytes.NewReader([]byte(fmt.Sprintf("uin=%v&qua=%s&cmd=%s&seq=%v&buffer=%v&android_id=%v&guid=%v&q36=%v",
+		// 	uin, qua, cmd, seq, hex.EncodeToString(buff), utils.B2S(device.AndroidId), hex.EncodeToString(device.Guid), device.QImei36))),
+		bytes.NewReader([]byte(fmt.Sprintf("uin=%v&qua=%s&cmd=%s&seq=%v&buffer=%v", uin, qua, cmd, seq, hex.EncodeToString(buff)))),
 	)
 	if err != nil {
 		return nil, nil, nil, err
