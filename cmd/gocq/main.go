@@ -19,7 +19,6 @@ import (
 	rotatelogs "github.com/lestrrat-go/file-rotatelogs"
 	"github.com/pkg/errors"
 	log "github.com/sirupsen/logrus"
-	"github.com/tidwall/gjson"
 	"golang.org/x/crypto/pbkdf2"
 	"golang.org/x/term"
 
@@ -307,33 +306,33 @@ func LoginInteract() {
 		cli.PasswordMd5 = base.PasswordHash
 	}
 	download.SetTimeout(time.Duration(base.HTTPTimeout) * time.Second)
-	if !base.FastStart {
-		log.Infof("正在检查协议更新...")
-		currentVersionName := device.Protocol.Version().SortVersionName
-		remoteVersion, err := getRemoteLatestProtocolVersion(int(device.Protocol.Version().Protocol))
-		if err == nil {
-			remoteVersionName := gjson.GetBytes(remoteVersion, "sort_version_name").String()
-			if remoteVersionName != currentVersionName {
-				switch {
-				case !base.UpdateProtocol:
-					log.Infof("检测到协议更新: %s -> %s", currentVersionName, remoteVersionName)
-					log.Infof("如果登录时出现版本过低错误, 可尝试使用 -update-protocol 参数启动")
-				case !isTokenLogin:
-					_ = device.Protocol.Version().UpdateFromJson(remoteVersion)
-					err := os.WriteFile(versionFile, remoteVersion, 0644)
-					log.Infof("协议版本已更新: %s -> %s", currentVersionName, remoteVersionName)
-					if err != nil {
-						log.Warnln("更新协议版本缓存文件", versionFile, "失败:", err)
-					}
-				default:
-					log.Infof("检测到协议更新: %s -> %s", currentVersionName, remoteVersionName)
-					log.Infof("由于使用了会话缓存, 无法自动更新协议, 请删除缓存后重试")
-				}
-			}
-		} else if err.Error() != "remote version unavailable" {
-			log.Warnf("检查协议更新失败: %v", err)
-		}
-	}
+	// if !base.FastStart {
+	// 	log.Infof("正在检查协议更新...")
+	// 	currentVersionName := device.Protocol.Version().SortVersionName
+	// 	remoteVersion, err := getRemoteLatestProtocolVersion(int(device.Protocol.Version().Protocol))
+	// 	if err == nil {
+	// 		remoteVersionName := gjson.GetBytes(remoteVersion, "sort_version_name").String()
+	// 		if remoteVersionName != currentVersionName {
+	// 			switch {
+	// 			case !base.UpdateProtocol:
+	// 				log.Infof("检测到协议更新: %s -> %s", currentVersionName, remoteVersionName)
+	// 				log.Infof("如果登录时出现版本过低错误, 可尝试使用 -update-protocol 参数启动")
+	// 			case !isTokenLogin:
+	// 				_ = device.Protocol.Version().UpdateFromJson(remoteVersion)
+	// 				err := os.WriteFile(versionFile, remoteVersion, 0644)
+	// 				log.Infof("协议版本已更新: %s -> %s", currentVersionName, remoteVersionName)
+	// 				if err != nil {
+	// 					log.Warnln("更新协议版本缓存文件", versionFile, "失败:", err)
+	// 				}
+	// 			default:
+	// 				log.Infof("检测到协议更新: %s -> %s", currentVersionName, remoteVersionName)
+	// 				log.Infof("由于使用了会话缓存, 无法自动更新协议, 请删除缓存后重试")
+	// 			}
+	// 		}
+	// 	} else if err.Error() != "remote version unavailable" {
+	// 		log.Warnf("检查协议更新失败: %v", err)
+	// 	}
+	// }
 	if !isTokenLogin {
 		if !isQRCodeLogin {
 			if err := commonLogin(); err != nil {
