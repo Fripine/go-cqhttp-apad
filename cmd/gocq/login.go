@@ -233,6 +233,8 @@ func getTicket(u string) string {
 		u = strings.ReplaceAll(u, "https://ssl.captcha.qq.com/template/wireless_mqq_captcha.html?", fmt.Sprintf("https://captcha.go-cqhttp.org/captcha?id=%v&", id))
 	}
 	log.Warnf("请前往该地址验证 -> %v ", u)
+	vu := fmt.Sprintf("[InternetShortcut]\nURL=%s\n", u)
+	_ = os.WriteFile("verify.url", []byte(vu), 0644)
 	if !auto {
 		log.Warn("请输入ticket： (Enter 提交)")
 		return readLine()
