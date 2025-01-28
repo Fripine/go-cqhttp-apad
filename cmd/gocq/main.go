@@ -17,7 +17,6 @@ import (
 	"github.com/Fripine/MiraiGo-apad/wrapper"
 	para "github.com/fumiama/go-hide-param"
 	rotatelogs "github.com/lestrrat-go/file-rotatelogs"
-	"github.com/pkg/errors"
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/crypto/pbkdf2"
 	"golang.org/x/term"
@@ -116,20 +115,27 @@ func PrepareData() {
 // LoginInteract 登录交互, 可能需要键盘输入, 必须在 InitBase, PrepareData 之后执行
 func LoginInteract() {
 	var byteKey []byte
-	arg := os.Args
-	if len(arg) > 1 {
-		for i := range arg {
-			switch arg[i] {
+	args := os.Args
+	if len(args) > 1 {
+		for i := range args {
+			// switch arg[i] {
 			// case "update":
 			// 	if len(arg) > i+1 {
 			// 		selfupdate.SelfUpdate(arg[i+1])
 			// 	} else {
 			// 		selfupdate.SelfUpdate("")
 			// 	}
-			case "key":
+			// case "key":
+			// 	p := i + 1
+			// 	if len(arg) > p {
+			// 		byteKey = []byte(arg[p])
+			// 		para.Hide(p)
+			// 	}
+			// }
+			if args[i] == "key" {
 				p := i + 1
-				if len(arg) > p {
-					byteKey = []byte(arg[p])
+				if len(args) > p {
+					byteKey = []byte(args[p])
 					para.Hide(p)
 				}
 			}
@@ -480,22 +486,22 @@ func newClient() *client.QQClient {
 	return c
 }
 
-var remoteVersions = map[int]string{
-	1: "https://raw.githubusercontent.com/Fripine/protocol-versions/master/android_phone.json",
-	6: "https://raw.githubusercontent.com/Fripine/protocol-versions/master/android_pad.json",
-}
+// var remoteVersions = map[int]string{
+// 	1: "https://raw.githubusercontent.com/Fripine/protocol-versions/master/android_phone.json",
+// 	6: "https://raw.githubusercontent.com/Fripine/protocol-versions/master/android_pad.json",
+// }
 
-func getRemoteLatestProtocolVersion(protocolType int) ([]byte, error) {
-	url, ok := remoteVersions[protocolType]
-	if !ok {
-		return nil, errors.New("remote version unavailable")
-	}
-	response, err := download.Request{URL: url}.Bytes()
-	if err != nil {
-		return download.Request{URL: "https://mirror.ghproxy.com/" + url}.Bytes()
-	}
-	return response, nil
-}
+// func getRemoteLatestProtocolVersion(protocolType int) ([]byte, error) {
+// 	url, ok := remoteVersions[protocolType]
+// 	if !ok {
+// 		return nil, errors.New("remote version unavailable")
+// 	}
+// 	response, err := download.Request{URL: url}.Bytes()
+// 	if err != nil {
+// 		return download.Request{URL: "https://mirror.ghproxy.com/" + url}.Bytes()
+// 	}
+// 	return response, nil
+// }
 
 type protocolLogger struct{}
 
