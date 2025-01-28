@@ -397,6 +397,7 @@ func LoginInteract() {
 	saveToken()
 	cli.AllowSlider = true
 	log.Infof("登录成功 欢迎使用: %v", cli.Nickname)
+	terminal.SetTitleExtra(cli.Uin)
 	log.Info("开始加载好友列表...")
 	global.Check(cli.ReloadFriendList(), true)
 	log.Infof("共加载 %v 个好友.", len(cli.FriendList))
