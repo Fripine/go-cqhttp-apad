@@ -2,6 +2,7 @@
 package gocq
 
 import (
+	"bufio"
 	"crypto/aes"
 	"crypto/md5"
 	"crypto/sha1"
@@ -9,6 +10,8 @@ import (
 	"fmt"
 	"os"
 	"path"
+	"strconv"
+	"strings"
 	"sync"
 	"time"
 
@@ -157,7 +160,7 @@ func LoginInteract() {
 	}
 	if !global.PathExists("device.json") {
 		log.Warn("虚拟设备信息不存在, 将自动生成随机设备.")
-		device = client.GenRandomDevice()
+		device = client.GenRandomDevice(selectProtocolType())
 		_ = os.WriteFile("device.json", device.ToJson(), 0o644)
 		log.Info("已生成设备信息并保存到 device.json 文件.")
 	} else {
@@ -484,6 +487,29 @@ func newClient() *client.QQClient {
 	}
 	c.SetLogger(protocolLogger{})
 	return c
+}
+
+func selectProtocolType() int {
+	pt := client.GetInternalProtocolType()
+	hint := "请选择登录协议:"
+	for i, v := range pt {
+		hint += fmt.Sprintf("\n> %d: %s", i+1, v)
+	}
+	hint += `
+请输入你需要的编号，你的选择是:`
+	fmt.Print(hint)
+	input := bufio.NewReader(os.Stdin)
+	readString, err := input.ReadString('\n')
+	if err != nil {
+		log.Fatal("输入不合法: ", err)
+	}
+	rmax := len(pt)
+	n, err := strconv.Atoi(strings.TrimSpace(readString))
+	if err != nil || n > rmax || n <= 0 {
+		log.Fatal("输入不合法: ", err)
+		n = 2
+	}
+	return n
 }
 
 // var remoteVersions = map[int]string{
