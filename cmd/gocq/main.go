@@ -507,7 +507,6 @@ func selectProtocolType() int {
 	n, err := strconv.Atoi(strings.TrimSpace(readString))
 	if err != nil || n > rmax || n <= 0 {
 		log.Fatal("输入不合法: ", err)
-		n = 2
 	}
 	return n
 }
