@@ -2,8 +2,8 @@ github.com/FloatTech/sqlite v1.6.3 h1:MQkqBNlkPuCoKQQgoNLuTL/2Ci3tBTFAnVYBdD0Wy4
 github.com/FloatTech/sqlite v1.6.3/go.mod h1:zFbHzRfB+CJ+VidfjuVbrcin3DAz283F7hF1hIeHzpY=
 github.com/FloatTech/ttl v0.0.0-20220715042055-15612be72f5b h1:tvciXWq2nuvTbFeJGLDNIdRX3BI546D3O7k7vrVueZw=
 github.com/FloatTech/ttl v0.0.0-20220715042055-15612be72f5b/go.mod h1:fHZFWGquNXuHttu9dUYoKuNbm3dzLETnIOnm1muSfDs=
-github.com/Fripine/MiraiGo-apad v0.0.0-20250129173505-6f4b8593d898 h1:Pq6VP+7cTvQO//kbOGq1THouW2VdTj7XISMqF2QzMoc=
-github.com/Fripine/MiraiGo-apad v0.0.0-20250129173505-6f4b8593d898/go.mod h1:EBqxrzETQ0I4LLUX9/WsPGBzcbaVdDKBtzdn0js4Kcw=
+github.com/Fripine/MiraiGo-apad v0.0.0-20250129175230-fcd7949d2ce0 h1:FR/aegYO/YKapsdRVBYFn2mfU9nAKuusfYiZWu9fXn8=
+github.com/Fripine/MiraiGo-apad v0.0.0-20250129175230-fcd7949d2ce0/go.mod h1:EBqxrzETQ0I4LLUX9/WsPGBzcbaVdDKBtzdn0js4Kcw=
 github.com/LagrangeDev/LagrangeGo v0.1.0 h1:3f/PvhKF7eOilticUmy8FLmtkjjtymAuFY91xavhIs8=
 github.com/LagrangeDev/LagrangeGo v0.1.0/go.mod h1:qK/l75YuMYdJWfPcxPhfjybJdXD4kzMFvcbKlvdAoa0=
 github.com/Microsoft/go-winio v0.6.2-0.20230724192519-b29bbd58a65a h1:aU1703IHxupjzipvhu16qYKLMR03e+8WuNR+JMsKfGU=
